@@ -4,8 +4,15 @@ pipeline {
         stage('Checkout Github') {
             steps {
                 echo 'Checking out code from GitHub...'
-		checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-token', url: 'https://github.com/EduardoSantosSousa/GITOPS-PROJECT-11.git']]))
-		    }
+                checkout scmGit(
+                    branches: [[name: '*/main']],
+                    extensions: [],
+                    userRemoteConfigs: [[
+                        credentialsId: 'github-token',
+                        url: 'https://github.com/EduardoSantosSousa/GITOPS-PROJECT-11.git'
+                    ]]
+                )
+            }
         }        
         stage('Build Docker Image') {
             steps {
