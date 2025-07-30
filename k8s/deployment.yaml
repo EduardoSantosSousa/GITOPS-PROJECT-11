@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: mlops-app
-        image: 
+        image: eduardosousa1493/gitops-project:latest
         ports:
         - containerPort: 5000
